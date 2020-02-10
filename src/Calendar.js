@@ -11,13 +11,12 @@ class Calendar extends Component {
     constructor(props) {
         super(props);
 
-        const currentDate = new Date();
+        const currentYear = new Date().getFullYear();
 
         this.state = {
-            input: new Date().getFullYear(),
-            year: new Date().getFullYear(),
-            isError: false,
-            today: currentDate
+            input: currentYear,
+            year: currentYear,
+            isError: false
         };
     }
 
@@ -92,7 +91,6 @@ class Calendar extends Component {
 
                 <CalendarTable
                     dateTableList={this.getDateTableList(this.state.year, i)}
-                    today={this.state.today}
                     language={this.props.language}
                 />
             </table>
@@ -113,7 +111,7 @@ class Calendar extends Component {
         } else {
             this.setState({
                 isError: false,
-                year: this.state.input
+                year: Number(this.state.input)
             });
         }
     }

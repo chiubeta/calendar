@@ -6,10 +6,11 @@ class CalendarTable extends Component {
         super(props);
 
         this.isCurrentMonth = false;
+        this.today = new Date();
     }
 
     getDateRow(startIdx) {
-        const {dateTableList, today} = this.props;
+        const {dateTableList} = this.props;
 
         const rowList = [];
         for(let i=startIdx; i<startIdx+7; i++){
@@ -18,9 +19,9 @@ class CalendarTable extends Component {
             }
 
             const isToday = 
-                (dateTableList[i].year === today.getFullYear() && 
-                dateTableList[i].month === today.getMonth() && 
-                dateTableList[i].day === today.getDate());
+                (dateTableList[i].year === this.today.getFullYear() && 
+                dateTableList[i].month === this.today.getMonth() && 
+                dateTableList[i].day === this.today.getDate());
 
             rowList.push(
                 <CalendarItem 
