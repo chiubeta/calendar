@@ -1,0 +1,31 @@
+table {
+    width: 250px;
+    display: inline-block;
+    margin: 10px;
+    border: solid 2px gray;
+}
+
+th,td {
+    padding: 5px;
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+.center {
+    text-align: center;
+}
+
+.today {
+    color: #db3d44;
+}
+
+.outOfRange {
+    color: #eeeeee;
+}
+
+.hide {
+    display: none
+}
